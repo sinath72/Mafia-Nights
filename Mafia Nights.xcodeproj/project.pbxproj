@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B144A1E29ACDB200028596A /* Acts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1D29ACDB200028596A /* Acts.swift */; };
+		7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */; };
+		7B144A2229ACDC740028596A /* Tuterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A2129ACDC740028596A /* Tuterials.swift */; };
+		7B144A2429ACDD090028596A /* Let'sPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A2329ACDD090028596A /* Let'sPlay.swift */; };
+		7B77012729A354C9007687B9 /* Mafia_NightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77012629A354C9007687B9 /* Mafia_NightsApp.swift */; };
+		7B77012929A354CA007687B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77012829A354C9007687B9 /* ContentView.swift */; };
+		7B77012B29A354D0007687B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B77012A29A354D0007687B9 /* Assets.xcassets */; };
+		7B77012E29A354D0007687B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B77012D29A354D0007687B9 /* Preview Assets.xcassets */; };
+		7B77013829A354D1007687B9 /* Mafia_NightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77013729A354D1007687B9 /* Mafia_NightsTests.swift */; };
+		7B77014229A354D1007687B9 /* Mafia_NightsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77014129A354D1007687B9 /* Mafia_NightsUITests.swift */; };
+		7B77014429A354D1007687B9 /* Mafia_NightsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B77014329A354D1007687B9 /* Mafia_NightsUITestsLaunchTests.swift */; };
+		7BE9F81229A60D5A007447E5 /* Player_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9F81129A60D5A007447E5 /* Player_Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B77013429A354D1007687B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B77011B29A354C9007687B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B77012229A354C9007687B9;
+			remoteInfo = "Mafia Nights";
+		};
+		7B77013E29A354D1007687B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B77011B29A354C9007687B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B77012229A354C9007687B9;
+			remoteInfo = "Mafia Nights";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7B144A1D29ACDB200028596A /* Acts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acts.swift; sourceTree = "<group>"; };
+		7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyPlayers.swift; sourceTree = "<group>"; };
+		7B144A2129ACDC740028596A /* Tuterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuterials.swift; sourceTree = "<group>"; };
+		7B144A2329ACDD090028596A /* Let'sPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Let'sPlay.swift"; sourceTree = "<group>"; };
+		7B77012329A354C9007687B9 /* Mafia Nights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mafia Nights.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B77012629A354C9007687B9 /* Mafia_NightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mafia_NightsApp.swift; sourceTree = "<group>"; };
+		7B77012829A354C9007687B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7B77012A29A354D0007687B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B77012D29A354D0007687B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7B77013329A354D1007687B9 /* Mafia NightsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mafia NightsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B77013729A354D1007687B9 /* Mafia_NightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mafia_NightsTests.swift; sourceTree = "<group>"; };
+		7B77013D29A354D1007687B9 /* Mafia NightsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mafia NightsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B77014129A354D1007687B9 /* Mafia_NightsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mafia_NightsUITests.swift; sourceTree = "<group>"; };
+		7B77014329A354D1007687B9 /* Mafia_NightsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mafia_NightsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7BE9F81129A60D5A007447E5 /* Player_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_Model.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B77012029A354C9007687B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77013029A354D1007687B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77013A29A354D1007687B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B144A1C29ACDAED0028596A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7B144A1D29ACDB200028596A /* Acts.swift */,
+				7B77012829A354C9007687B9 /* ContentView.swift */,
+				7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */,
+				7B144A2129ACDC740028596A /* Tuterials.swift */,
+				7B144A2329ACDD090028596A /* Let'sPlay.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7B77011A29A354C9007687B9 = {
+			isa = PBXGroup;
+			children = (
+				7B77012529A354C9007687B9 /* Mafia Nights */,
+				7B77013629A354D1007687B9 /* Mafia NightsTests */,
+				7B77014029A354D1007687B9 /* Mafia NightsUITests */,
+				7B77012429A354C9007687B9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B77012429A354C9007687B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B77012329A354C9007687B9 /* Mafia Nights.app */,
+				7B77013329A354D1007687B9 /* Mafia NightsTests.xctest */,
+				7B77013D29A354D1007687B9 /* Mafia NightsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B77012529A354C9007687B9 /* Mafia Nights */ = {
+			isa = PBXGroup;
+			children = (
+				7B144A1C29ACDAED0028596A /* ViewModel */,
+				7BE9F81029A60CF9007447E5 /* model */,
+				7B77012629A354C9007687B9 /* Mafia_NightsApp.swift */,
+				7B77012A29A354D0007687B9 /* Assets.xcassets */,
+				7B77012C29A354D0007687B9 /* Preview Content */,
+			);
+			path = "Mafia Nights";
+			sourceTree = "<group>";
+		};
+		7B77012C29A354D0007687B9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7B77012D29A354D0007687B9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B77013629A354D1007687B9 /* Mafia NightsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7B77013729A354D1007687B9 /* Mafia_NightsTests.swift */,
+			);
+			path = "Mafia NightsTests";
+			sourceTree = "<group>";
+		};
+		7B77014029A354D1007687B9 /* Mafia NightsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7B77014129A354D1007687B9 /* Mafia_NightsUITests.swift */,
+				7B77014329A354D1007687B9 /* Mafia_NightsUITestsLaunchTests.swift */,
+			);
+			path = "Mafia NightsUITests";
+			sourceTree = "<group>";
+		};
+		7BE9F81029A60CF9007447E5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7BE9F81129A60D5A007447E5 /* Player_Model.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B77012229A354C9007687B9 /* Mafia Nights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B77014729A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia Nights" */;
+			buildPhases = (
+				7B77011F29A354C9007687B9 /* Sources */,
+				7B77012029A354C9007687B9 /* Frameworks */,
+				7B77012129A354C9007687B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mafia Nights";
+			productName = "Mafia Nights";
+			productReference = 7B77012329A354C9007687B9 /* Mafia Nights.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7B77013229A354D1007687B9 /* Mafia NightsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B77014A29A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia NightsTests" */;
+			buildPhases = (
+				7B77012F29A354D1007687B9 /* Sources */,
+				7B77013029A354D1007687B9 /* Frameworks */,
+				7B77013129A354D1007687B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B77013529A354D1007687B9 /* PBXTargetDependency */,
+			);
+			name = "Mafia NightsTests";
+			productName = "Mafia NightsTests";
+			productReference = 7B77013329A354D1007687B9 /* Mafia NightsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7B77013C29A354D1007687B9 /* Mafia NightsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B77014D29A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia NightsUITests" */;
+			buildPhases = (
+				7B77013929A354D1007687B9 /* Sources */,
+				7B77013A29A354D1007687B9 /* Frameworks */,
+				7B77013B29A354D1007687B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B77013F29A354D1007687B9 /* PBXTargetDependency */,
+			);
+			name = "Mafia NightsUITests";
+			productName = "Mafia NightsUITests";
+			productReference = 7B77013D29A354D1007687B9 /* Mafia NightsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B77011B29A354C9007687B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					7B77012229A354C9007687B9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					7B77013229A354D1007687B9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 7B77012229A354C9007687B9;
+					};
+					7B77013C29A354D1007687B9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 7B77012229A354C9007687B9;
+					};
+				};
+			};
+			buildConfigurationList = 7B77011E29A354C9007687B9 /* Build configuration list for PBXProject "Mafia Nights" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7B77011A29A354C9007687B9;
+			productRefGroup = 7B77012429A354C9007687B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B77012229A354C9007687B9 /* Mafia Nights */,
+				7B77013229A354D1007687B9 /* Mafia NightsTests */,
+				7B77013C29A354D1007687B9 /* Mafia NightsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B77012129A354C9007687B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B77012E29A354D0007687B9 /* Preview Assets.xcassets in Resources */,
+				7B77012B29A354D0007687B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77013129A354D1007687B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77013B29A354D1007687B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B77011F29A354C9007687B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B144A2429ACDD090028596A /* Let'sPlay.swift in Sources */,
+				7B144A1E29ACDB200028596A /* Acts.swift in Sources */,
+				7B77012929A354CA007687B9 /* ContentView.swift in Sources */,
+				7BE9F81229A60D5A007447E5 /* Player_Model.swift in Sources */,
+				7B144A2229ACDC740028596A /* Tuterials.swift in Sources */,
+				7B77012729A354C9007687B9 /* Mafia_NightsApp.swift in Sources */,
+				7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77012F29A354D1007687B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B77013829A354D1007687B9 /* Mafia_NightsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B77013929A354D1007687B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B77014429A354D1007687B9 /* Mafia_NightsUITestsLaunchTests.swift in Sources */,
+				7B77014229A354D1007687B9 /* Mafia_NightsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B77013529A354D1007687B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B77012229A354C9007687B9 /* Mafia Nights */;
+			targetProxy = 7B77013429A354D1007687B9 /* PBXContainerItemProxy */;
+		};
+		7B77013F29A354D1007687B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B77012229A354C9007687B9 /* Mafia Nights */;
+			targetProxy = 7B77013E29A354D1007687B9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7B77014529A354D1007687B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7B77014629A354D1007687B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B77014829A354D1007687B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mafia Nights/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-Nights";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B77014929A354D1007687B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mafia Nights/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-Nights";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7B77014B29A354D1007687B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-NightsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mafia Nights.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mafia Nights";
+			};
+			name = Debug;
+		};
+		7B77014C29A354D1007687B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-NightsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mafia Nights.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mafia Nights";
+			};
+			name = Release;
+		};
+		7B77014E29A354D1007687B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-NightsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mafia Nights";
+			};
+			name = Debug;
+		};
+		7B77014F29A354D1007687B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sinath.ga.Mafia-NightsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mafia Nights";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B77011E29A354C9007687B9 /* Build configuration list for PBXProject "Mafia Nights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B77014529A354D1007687B9 /* Debug */,
+				7B77014629A354D1007687B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B77014729A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia Nights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B77014829A354D1007687B9 /* Debug */,
+				7B77014929A354D1007687B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B77014A29A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia NightsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B77014B29A354D1007687B9 /* Debug */,
+				7B77014C29A354D1007687B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B77014D29A354D1007687B9 /* Build configuration list for PBXNativeTarget "Mafia NightsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B77014E29A354D1007687B9 /* Debug */,
+				7B77014F29A354D1007687B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B77011B29A354C9007687B9 /* Project object */;
+}
