@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A6D8D3129B610BA000CB3E1 /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69429B536D1009A84D8 /* Act_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act_Model.swift; sourceTree = "<group>"; };
 		5AA9F69629B53EBA009A84D8 /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69929B53F28009A84D8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
@@ -91,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA9F69929B53F28009A84D8 /* DB.swift */,
+				5A6D8D3129B610BA000CB3E1 /* MafiaNights.sqlite */,
 			);
 			path = View;
 			sourceTree = "<group>";

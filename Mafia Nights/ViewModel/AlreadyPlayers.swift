@@ -20,7 +20,8 @@ struct alreadyPlayers:View {
                             ForEach(0..<AlreadyArray.count,id: \.self){ i in
                                 Text(AlreadyArray[i].name)
                             }
-                        }.toolbar(content: {
+                        }
+                        .toolbar(content: {
                             Button(" "){
                                 isPresent = true
                             }.alert("نام بازیکن ثابت", isPresented: $isPresent,actions: {
