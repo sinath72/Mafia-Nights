@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Acts:View {
     @Binding var PlayerName:[String]
+    @State private var Acts:[Act_Model] = []
     var body: some View{
         VStack(spacing: 0){
             NavigationView {
@@ -16,10 +17,21 @@ struct Acts:View {
                     .ignoresSafeArea()
                     .overlay(
                         List{
-                            ForEach(0..<PlayerName.count,id:\.self){ i in
-                                Text(PlayerName[i].description)
+                            ForEach(0..<Acts.count,id:\.self){ i in
+                                Toggle(isOn: $Acts[i].Modify) { Text(Acts[i].ActName.description)
+                                }
                             }
                         }
+                            .onAppear{
+                                
+                            }
+                            .toolbar(content: {
+                                Button(" "){
+                                    
+                                }
+                                .background(Image(systemName: "plus"))
+                                .padding()
+                            })
                             .navigationTitle("نقش ها")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarTitleTextColor(.black)
@@ -30,6 +42,6 @@ struct Acts:View {
 }
 struct Acts_preview:PreviewProvider {
     static var previews: some View{
-        Acts(PlayerName: .constant([]))
+        Acts(PlayerName: .constant(["ppp","lll","kkk"]))
     }
 }

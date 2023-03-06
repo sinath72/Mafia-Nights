@@ -39,7 +39,44 @@ struct LetsPlay: View{
                                     }
                                 })
                             }
-                        }
+                        }.toolbar(content: {
+                            
+                            Button("   "){
+                                presentAlert = true
+                            }
+                            .alert("نام بازیکن جدید", isPresented: $presentAlert, actions: {
+                                TextField("نام بازیکن", text: $PlayerName)
+                                
+                                //                    SecureField("Password", text: $password)
+                                
+                                
+                                Button("افزودن", action: {
+                                    var id = 1
+                                    if name.count > 0 {
+                                        id = name.last!.id
+                                    }
+                                    name.append(PlayerModel(id: id, name: $PlayerName.wrappedValue, modify: false))
+                                    //                        name.append($PlayerName.wrappedValue)
+                                    print(name)
+                                    self.PlayerName = ""
+                                })
+                                if name.isEmpty{
+                                    Button("انصراف",role: .cancel,action: {
+                                        self.PlayerName = ""
+                                    })
+                                }
+                                else{
+                                    Button("تایید", role: .cancel, action: {
+                                        self.PlayerName = ""
+                                    })
+                                }
+                            }, message: {
+                                Text("لطفا نام بازیکن جدید را وارد کنید")
+                            })
+                            .clipShape(Circle())
+                            .background(Image(systemName: "person.fill.badge.plus").dynamicTypeSize(.xLarge))
+                            .dynamicTypeSize(.xLarge)
+                        })
                             .navigationBarTitle("بازیکنان")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarTitleTextColor(Color.black)
@@ -53,52 +90,17 @@ struct LetsPlay: View{
                     HStack(alignment: .bottom){
                         NavigationLink(destination: Acts(PlayerName: $alreadyName)) {
                             Text("ادامه")
-                                .frame(minWidth: CGFloat(300))
+                                .frame(minWidth: CGFloat(350))
                                 .foregroundColor(.white)
                                 .background(LinearGradient(gradient: Gradient(colors: [Color.orange,Color.cyan]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(40)
                                 .font(.largeTitle)
                                 .padding()
                         }
-                        Button("   "){
-                            presentAlert = true
-                        }
-                        .alert("نام بازیکن جدید", isPresented: $presentAlert, actions: {
-                            TextField("نام بازیکن", text: $PlayerName)
-                            
-                            //                    SecureField("Password", text: $password)
-                            
-                            
-                            Button("افزودن", action: {
-                                var id = 1
-                                if name.count > 0 {
-                                    id = name.last!.id
-                                }
-                                name.append(PlayerModel(id: id, name: $PlayerName.wrappedValue, modify: false))
-                                //                        name.append($PlayerName.wrappedValue)
-                                print(name)
-                                self.PlayerName = ""
-                            })
-                            if name.isEmpty{
-                                Button("انصراف",role: .cancel,action: {
-                                    self.PlayerName = ""
-                                })
-                            }
-                            else{
-                                Button("تایید", role: .cancel, action: {
-                                    self.PlayerName = ""
-                                })
-                            }
-                        }, message: {
-                            Text("لطفا نام بازیکن جدید را وارد کنید")
-                        })
-                        .clipShape(Circle())
-                        .background(Image(systemName: "person.fill.badge.plus").dynamicTypeSize(.xxxLarge)
-                            .background(Color(.green)))
-                        .dynamicTypeSize(.xxxLarge)
                         .padding()
                     }
-                )}
+                )
+        }
     }
 }
 struct Letsplay_preview: PreviewProvider{
