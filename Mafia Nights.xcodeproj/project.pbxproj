@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5AA9F69529B536D1009A84D8 /* Act_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69429B536D1009A84D8 /* Act_Model.swift */; };
-		5AA9F69729B53EBA009A84D8 /* MafiaNights.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5AA9F69629B53EBA009A84D8 /* MafiaNights.sqlite */; };
 		5AA9F69A29B53F28009A84D8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69929B53F28009A84D8 /* DB.swift */; };
 		7B144A1E29ACDB200028596A /* Acts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1D29ACDB200028596A /* Acts.swift */; };
 		7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */; };
@@ -42,9 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A6D8D3129B610BA000CB3E1 /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
+		5A41ADC729B6753D005C0C8A /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69429B536D1009A84D8 /* Act_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act_Model.swift; sourceTree = "<group>"; };
-		5AA9F69629B53EBA009A84D8 /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69929B53F28009A84D8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		7B144A1D29ACDB200028596A /* Acts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acts.swift; sourceTree = "<group>"; };
 		7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyPlayers.swift; sourceTree = "<group>"; };
@@ -92,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA9F69929B53F28009A84D8 /* DB.swift */,
-				5A6D8D3129B610BA000CB3E1 /* MafiaNights.sqlite */,
+				5A41ADC729B6753D005C0C8A /* MafiaNights.sqlite */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,7 +134,6 @@
 				5AA9F69829B53F08009A84D8 /* View */,
 				7B144A1C29ACDAED0028596A /* ViewModel */,
 				7B77012629A354C9007687B9 /* Mafia_NightsApp.swift */,
-				5AA9F69629B53EBA009A84D8 /* MafiaNights.sqlite */,
 				7B77012A29A354D0007687B9 /* Assets.xcassets */,
 				7B77012C29A354D0007687B9 /* Preview Content */,
 			);
@@ -282,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B77012E29A354D0007687B9 /* Preview Assets.xcassets in Resources */,
-				5AA9F69729B53EBA009A84D8 /* MafiaNights.sqlite in Resources */,
 				7B77012B29A354D0007687B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

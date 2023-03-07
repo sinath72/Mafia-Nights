@@ -7,9 +7,10 @@
 
 import SwiftUI
 struct alreadyPlayers:View {
-    @State private var AlreadyArray:[PlayerModel] = [PlayerModel(id: 1, name: "2", modify: false)]
+    @State private var AlreadyArray:[PlayerModel] = []
     @State private var name:String = ""
     @State private var isPresent:Bool = false
+    @State private var isRefreshed:Bool = false
     var body:some View{
         VStack{
             NavigationView{
@@ -20,6 +21,14 @@ struct alreadyPlayers:View {
                             ForEach(0..<AlreadyArray.count,id: \.self){ i in
                                 Text(AlreadyArray[i].name)
                             }
+                            .listRowBackground(Color.green)
+                        }.scrollContentBackground(.visible)
+                            .listStyle(.plain)
+                            .refreshable {
+                            AlreadyArray = DB().getPlayerList()
+                        }
+                        .onAppear{
+                           AlreadyArray = DB().getPlayerList()
                         }
                         .toolbar(content: {
                             Button(" "){
@@ -27,17 +36,19 @@ struct alreadyPlayers:View {
                             }.alert("نام بازیکن ثابت", isPresented: $isPresent,actions: {
                                 TextField("نام بازیکن",text: $name)
                                 Button("افزودن", action: {
-                                    
+                                    DB().setNewPlayer(name: NSString(string: name))
+                                    AlreadyArray = DB().getPlayerList()
+                                    name = ""
                                 })
                                 
                                 if AlreadyArray.isEmpty{
                                     Button("انصراف",role: .cancel,action: {
-                                        self.name = ""
+                                        name = ""
                                     })
                                 }
                                 else{
                                     Button("تایید", role: .cancel, action: {
-                                        self.name = ""
+                                        name = ""
                                     })
                                 }
                             },message: {

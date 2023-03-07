@@ -25,6 +25,7 @@ struct LetsPlay: View{
                                 Toggle(isOn: $name[i].modify) {
                                     Text(name[i].name.description)
                                 }
+                                .listRowBackground(Color.teal)
                                 .onChange(of: name[i].modify, perform: { value in
                                     if value{
                                         alreadyName.append($name[i].name.wrappedValue)
@@ -39,45 +40,55 @@ struct LetsPlay: View{
                                     }
                                 })
                             }
-                        }.toolbar(content: {
-                            
-                            Button("   "){
-                                presentAlert = true
+                        }.scrollContentBackground(.visible)
+                            .listStyle(.plain)
+                            .refreshable {
+                                name = DB().getPlayerList()
                             }
-                            .alert("نام بازیکن جدید", isPresented: $presentAlert, actions: {
-                                TextField("نام بازیکن", text: $PlayerName)
+                            .onAppear{
+                                name = []
+                                name.append(contentsOf: DB().getPlayerList())
+                                Color.green
+                            }
+                            .toolbar(content: {
                                 
-                                //                    SecureField("Password", text: $password)
-                                
-                                
-                                Button("افزودن", action: {
-                                    var id = 1
-                                    if name.count > 0 {
-                                        id = name.last!.id
+                                Button("   "){
+                                    presentAlert = true
+                                }
+                                .alert("نام بازیکن جدید", isPresented: $presentAlert, actions: {
+                                    TextField("نام بازیکن", text: $PlayerName)
+                                    
+                                    //                    SecureField("Password", text: $password)
+                                    
+                                    
+                                    Button("افزودن", action: {
+                                        var id = 1
+                                        if name.count > 0 {
+                                            id = name.last!.id
+                                        }
+                                        name.append(PlayerModel(id: id, name: $PlayerName.wrappedValue, modify: false))
+                                        //                        name.append($PlayerName.wrappedValue)
+                                        print(name)
+                                        self.PlayerName = ""
+                                    })
+                                    if name.isEmpty{
+                                        Button("انصراف",role: .cancel,action: {
+                                            self.PlayerName = ""
+                                        })
                                     }
-                                    name.append(PlayerModel(id: id, name: $PlayerName.wrappedValue, modify: false))
-                                    //                        name.append($PlayerName.wrappedValue)
-                                    print(name)
-                                    self.PlayerName = ""
+                                    else{
+                                        Button("تایید", role: .cancel, action: {
+                                            self.PlayerName = ""
+                                        })
+                                    }
+                                }, message: {
+                                    Text("لطفا نام بازیکن جدید را وارد کنید")
                                 })
-                                if name.isEmpty{
-                                    Button("انصراف",role: .cancel,action: {
-                                        self.PlayerName = ""
-                                    })
-                                }
-                                else{
-                                    Button("تایید", role: .cancel, action: {
-                                        self.PlayerName = ""
-                                    })
-                                }
-                            }, message: {
-                                Text("لطفا نام بازیکن جدید را وارد کنید")
+                                .clipShape(Circle())
+                                .background(Image(systemName: "person.fill.badge.plus").dynamicTypeSize(.xLarge))
+                                .dynamicTypeSize(.xLarge)
                             })
-                            .clipShape(Circle())
-                            .background(Image(systemName: "person.fill.badge.plus").dynamicTypeSize(.xLarge))
-                            .dynamicTypeSize(.xLarge)
-                        })
-                            .navigationBarTitle("بازیکنان")
+                            .navigationBarTitle("تعداد بازیکنان انتخاب شده: \(alreadyName.count)")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarTitleTextColor(Color.black)
                             .navigationSplitViewStyle(.balanced)

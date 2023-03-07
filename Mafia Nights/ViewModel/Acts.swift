@@ -20,10 +20,12 @@ struct Acts:View {
                             ForEach(0..<Acts.count,id:\.self){ i in
                                 Toggle(isOn: $Acts[i].Modify) { Text(Acts[i].ActName.description)
                                 }
+                                .listRowBackground(Color.teal)
                             }
-                        }
+                        }.scrollContentBackground(.visible)
+                            .listStyle(.plain)
                             .onAppear{
-                                
+                                Acts = DB().getActsList()
                             }
                             .toolbar(content: {
                                 Button(" "){
