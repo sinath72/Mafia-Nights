@@ -46,13 +46,14 @@ class DB{
         }
     }
     func MaxPID() -> Int?{
-        let QueryString = "SELECT MAX(id,1) FROM Player"
+        let QueryString = "SELECT MAX(id) FROM Player"
         var QueryStatement:OpaquePointer? = nil
         var PID:Int?
         if sqlite3_prepare_v2(myDB, QueryString, -1,&QueryStatement,nil) == SQLITE_OK{
-            let id = sqlite3_column_int(QueryStatement, 0)
-            PID = Int(id)
-            print("id",id)
+            while sqlite3_step(QueryStatement) == SQLITE_ROW{
+                let id = sqlite3_column_int(QueryStatement, 0)
+                PID = Int(id)
+            }
         }
         return PID
     }
@@ -88,7 +89,7 @@ class DB{
         return data
     }
     func setNewPlayer(name:NSString){
-        let id = MaxPID()! + 4
+        let id = MaxPID()! + 1
         let InsertString = "INSERT INTO Player (id,name) VALUES (?,?)"
         var Statement:OpaquePointer? = nil
         if sqlite3_prepare_v2(myDB, InsertString, -1, &Statement, nil) == SQLITE_OK{
