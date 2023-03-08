@@ -21,11 +21,14 @@ struct alreadyPlayers:View {
                             ForEach(0..<AlreadyArray.count,id: \.self){ i in
                                 HStack(spacing: 12.0){
                                     Text(AlreadyArray[i].name)
-                                    Spacer()
-                                    Button("حذف"){
-                                        DB().DeletePlayer(id: AlreadyArray[i].id)
-                                        AlreadyArray = DB().getPlayerList()
-                                    }.foregroundColor(Color.red)
+                                        .swipeActions(edge:.trailing,allowsFullSwipe: true){
+                                        Button(role: .destructive,action:{
+                                            DB().DeletePlayer(id: AlreadyArray[i].id)
+                                            AlreadyArray = DB().getPlayerList()
+                                        }) {
+                                            Label("حذف",systemImage:"trash")
+                                        }
+                                    }
                                 }
                             }
                             .listRowBackground(Color.green)

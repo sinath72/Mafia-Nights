@@ -8,7 +8,7 @@
 import SwiftUI
 struct Acts:View {
     @Binding var PlayerName:[String]
-    @State private var Acts:[Act_Model] = []
+    @State private var Acts:[Act_Model] = []//[Act_Model(id: 1, ActName: "p", ActDescription: "o", ActPhotoID: 0, Side: "p", Modify: false)]
     @State private var ActsSelected:[String] = []
     @State private var isPresentAlert = false
     @State private var ActName = ""
@@ -21,7 +21,18 @@ struct Acts:View {
                     .overlay(
                         List{
                             ForEach(0..<Acts.count,id:\.self){ i in
-                                Toggle(isOn: $Acts[i].Modify) { Text(Acts[i].ActName.description)
+                                HStack(spacing:12.0){
+                                    Toggle(isOn: $Acts[i].Modify) {
+                                        Text(Acts[i].ActName.description)
+                                    }
+                                    Spacer()
+                                    Button(""){
+                                        if Acts[i].Modify{
+                                            ActsSelected.append(Acts[i].ActName)
+                                        }
+                                    }
+                                    .background(Image(systemName: "plus").dynamicTypeSize(.xxxLarge))
+                                        .foregroundColor(Color.pink)
                                 }
                                 .listRowBackground(Color.teal)
                                 .onChange(of: Acts[i].Modify) { Value in
@@ -30,8 +41,11 @@ struct Acts:View {
                                     }
                                     else {
                                         if ActsSelected.contains(Acts[i].ActName) {
-                                            let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
-                                            ActsSelected.remove(at: index!)
+                                            let maximum_count_index = ActsSelected.filter { $0 == Acts[i].ActName}.count - 1
+                                            for _ in 0...maximum_count_index{
+                                                let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
+                                                ActsSelected.remove(at: index!)
+                                            }
                                         }
                                     }
                                 }
@@ -67,7 +81,7 @@ struct Acts:View {
                                 .foregroundColor(Color.blue)
                                 .padding()
                             })
-                            .navigationTitle("تعداد نقش ها: \(ActsSelected.count) \t تعداد بازیکنان:\(PlayerName.count)")
+                            .navigationTitle("تعداد نقش ها:  \(ActsSelected.count) \t تعداد بازیکنان:  \(PlayerName.count)")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarTitleTextColor(.black)
                     )
