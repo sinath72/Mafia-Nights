@@ -7,7 +7,6 @@
 
 import SwiftUI
 struct ContentView: View {
-    @State var t = ""
     var body: some View {
         NavigationView{
             Color.black
