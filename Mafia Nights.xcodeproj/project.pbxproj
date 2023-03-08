@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A11255429B7F5D500C9733F /* GetPlayerActs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11255329B7F5D500C9733F /* GetPlayerActs.swift */; };
 		5AA9F69529B536D1009A84D8 /* Act_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69429B536D1009A84D8 /* Act_Model.swift */; };
 		5AA9F69A29B53F28009A84D8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69929B53F28009A84D8 /* DB.swift */; };
 		7B144A1E29ACDB200028596A /* Acts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1D29ACDB200028596A /* Acts.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A11255329B7F5D500C9733F /* GetPlayerActs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerActs.swift; sourceTree = "<group>"; };
 		5A41ADC729B6753D005C0C8A /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69429B536D1009A84D8 /* Act_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act_Model.swift; sourceTree = "<group>"; };
 		5AA9F69929B53F28009A84D8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */,
 				7B144A2129ACDC740028596A /* Tuterials.swift */,
 				7B144A2329ACDD090028596A /* Let'sPlay.swift */,
+				5A11255329B7F5D500C9733F /* GetPlayerActs.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				5AA9F69529B536D1009A84D8 /* Act_Model.swift in Sources */,
 				7B77012929A354CA007687B9 /* ContentView.swift in Sources */,
 				7BE9F81229A60D5A007447E5 /* Player_Model.swift in Sources */,
+				5A11255429B7F5D500C9733F /* GetPlayerActs.swift in Sources */,
 				7B144A2229ACDC740028596A /* Tuterials.swift in Sources */,
 				7B77012729A354C9007687B9 /* Mafia_NightsApp.swift in Sources */,
 				7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */,
@@ -473,6 +477,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Mafia Nights/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "مافیا بازی";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -501,6 +506,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Mafia Nights/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "مافیا بازی";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
