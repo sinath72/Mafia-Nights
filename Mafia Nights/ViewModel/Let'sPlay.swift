@@ -86,6 +86,7 @@ struct LetsPlay: View{
                                 })
                                 .clipShape(Circle())
                                 .background(Image(systemName: "person.fill.badge.plus").dynamicTypeSize(.xLarge))
+                                .foregroundColor(Color.black)
                                 .dynamicTypeSize(.xLarge)
                             })
                             .navigationBarTitle("تعداد بازیکنان انتخاب شده: \(alreadyName.count)")
@@ -101,6 +102,7 @@ struct LetsPlay: View{
                     HStack(alignment: .bottom){
                         NavigationLink(destination: Acts(PlayerName: $alreadyName)) {
                             Text("ادامه")
+                                .foregroundColor(Color.black)
                                 .frame(minWidth: CGFloat(350))
                                 .foregroundColor(.white)
                                 .background(LinearGradient(gradient: Gradient(colors: [Color.orange,Color.cyan]), startPoint: .leading, endPoint: .trailing))

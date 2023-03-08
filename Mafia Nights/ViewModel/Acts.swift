@@ -64,6 +64,7 @@ struct Acts:View {
                                     Text("لطفا نام نقش به همراه طرف بازی نقش را وارد کنید")
                                 })
                                 .background(Image(systemName: "plus"))
+                                .foregroundColor(Color.blue)
                                 .padding()
                             })
                             .navigationTitle("تعداد نقش ها: \(ActsSelected.count) \t تعداد بازیکنان:\(PlayerName.count)")
@@ -79,8 +80,8 @@ struct Acts:View {
                         if ActsSelected.count == PlayerName.count{
                             NavigationLink(destination: GetPlayerActs()) {
                                 Text("پخش نقش")
+                                    .foregroundColor(Color.black)
                                     .frame(minWidth: CGFloat(350))
-                                    .foregroundColor(.white)
                                     .background(LinearGradient(gradient: Gradient(colors: [Color.blue,Color.purple]), startPoint: .leading, endPoint: .trailing))
                                     .cornerRadius(40)
                                     .font(.largeTitle)
