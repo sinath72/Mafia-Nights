@@ -33,6 +33,20 @@ struct Acts:View {
                                     }
                                     .background(Image(systemName: "plus").dynamicTypeSize(.xxxLarge))
                                         .foregroundColor(Color.pink)
+                                        
+                                }
+                                .swipeActions (edge: .trailing, allowsFullSwipe: true){
+                                    Button(role: .destructive,action:{
+                                        if Acts[i].Modify{
+                                            let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
+                                            ActsSelected.remove(at: index!)
+                                            if ActsSelected.count == 0{
+                                                Acts[i].Modify.toggle()
+                                            }
+                                        }
+                                    }) {
+                                        Label("حذف",systemImage:"minus")
+                                    }
                                 }
                                 .listRowBackground(Color.teal)
                                 .onChange(of: Acts[i].Modify) { Value in
