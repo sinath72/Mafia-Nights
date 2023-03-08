@@ -23,7 +23,11 @@ struct Acts:View {
                             ForEach(0..<Acts.count,id:\.self){ i in
                                 HStack(spacing:12.0){
                                     Toggle(isOn: $Acts[i].Modify) {
-                                        Text(Acts[i].ActName.description)
+                                        HStack{
+                                            Text(Acts[i].ActName.description)
+                                            Spacer()
+                                            Text(String(ActsSelected.filter{$0 == Acts[i].ActName}.count))
+                                        }
                                     }
                                     Spacer()
                                     Button(""){
