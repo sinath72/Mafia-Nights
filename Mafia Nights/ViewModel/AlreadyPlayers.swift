@@ -10,6 +10,7 @@ struct alreadyPlayers:View {
     @State private var AlreadyArray:[PlayerModel] = []//[PlayerModel(id: 100, name: "l", modify: false)]
     @State private var name:String = ""
     @State private var isPresent:Bool = false
+    @State private var isPresentEdite:Bool = false
     @State private var isRefreshed:Bool = false
     var body:some View{
         VStack{
@@ -22,13 +23,28 @@ struct alreadyPlayers:View {
                                 HStack(spacing: 12.0){
                                     Text(AlreadyArray[i].name)
                                         .swipeActions(edge:.trailing,allowsFullSwipe: true){
-                                        Button(role: .destructive,action:{
-                                            DB().DeletePlayer(id: AlreadyArray[i].id)
-                                            AlreadyArray = DB().getPlayerList()
-                                        }) {
-                                            Label("حذف",systemImage:"trash")
+                                            Button(role: .destructive,action:{
+                                                DB().DeletePlayer(id: AlreadyArray[i].id)
+                                                AlreadyArray = DB().getPlayerList()
+                                            }) {
+                                                Label("حذف",systemImage:"trash")
+                                            }
                                         }
-                                    }
+                                        .swipeActions(edge:.leading,allowsFullSwipe: true) {
+                                            Button(role: .none,action:{
+                                                isPresentEdite.toggle()
+                                            }) {
+                                                Label("ویرایش",systemImage:"square.and.pencil")
+                                            }.background(Color.blue)
+                                        }.alert("تغییر نام بازیکن", isPresented: $isPresentEdite) {
+                                            let myName = $AlreadyArray[i].name
+                                            TextField("", text: myName).background(Color.gray)
+                                            Button("لغو"){}
+                                            Button("ویرایش"){
+                                                DB().UpdatePlayer(id: AlreadyArray[i].id, name: myName.wrappedValue)
+                                                AlreadyArray = DB().getPlayerList()
+                                            }
+                                        }
                                 }
                             }
                             .listRowBackground(Color.green)

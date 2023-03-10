@@ -108,9 +108,28 @@ class DB{
         sqlite3_finalize(Statement)
     }
     func DeletePlayer(id:Int){
-        let InsertString = "DELETE FROM Player WHERE id = \(id)"
+        let DeleteString = "DELETE FROM Player WHERE id = \(id)"
         var Statement:OpaquePointer? = nil
-        if sqlite3_prepare_v2(myDB, InsertString, -1, &Statement, nil) == SQLITE_OK{
+        if sqlite3_prepare_v2(myDB, DeleteString, -1, &Statement, nil) == SQLITE_OK{
+            print(sqlite3_step(Statement))
+            if sqlite3_step(Statement) == SQLITE_DONE{
+                print("done")
+            }
+            else{
+                print("not done")
+            }
+        }
+        else{
+            print("error")
+        }
+        sqlite3_finalize(Statement)
+    }
+    //UPDATE Player SET name = "poolk" WHERE id = 1
+    
+    func UpdatePlayer(id:Int,name:String){
+        let UpdateString = "UPDATE Player SET name = '\(name)' WHERE id = '\(id)'"
+        var Statement:OpaquePointer? = nil
+        if sqlite3_prepare_v2(myDB, UpdateString, -1, &Statement, nil) == SQLITE_OK{
             print(sqlite3_step(Statement))
             if sqlite3_step(Statement) == SQLITE_DONE{
                 print("done")

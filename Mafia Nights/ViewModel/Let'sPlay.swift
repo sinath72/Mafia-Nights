@@ -64,7 +64,7 @@ struct LetsPlay: View{
                                     Button("افزودن", action: {
                                         var id = 1
                                         if name.count > 0 {
-                                            id = name.last!.id
+                                            id = name.last!.id + 1
                                         }
                                         name.append(PlayerModel(id: id, name: $PlayerName.wrappedValue, modify: false))
                                         //                        name.append($PlayerName.wrappedValue)
