@@ -41,12 +41,18 @@ struct Acts:View {
                                 }
                                 .swipeActions (edge: .trailing, allowsFullSwipe: true){
                                     Button(role: .destructive,action:{
-                                        if Acts[i].Modify{
-                                            let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
-                                            ActsSelected.remove(at: index!)
-                                            if ActsSelected.count == 0{
-                                                Acts[i].Modify.toggle()
+                                        if Acts[i].Modify == true{
+                                            if ActsSelected.filter({$0 == Acts[i].ActName}).count > 0{
+                                                print("pill")
+                                                let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
+                                                ActsSelected.remove(at: index!)
+                                                if ActsSelected.count == 0{
+                                                    Acts[i].Modify.toggle()
+                                                }
                                             }
+                                        }
+                                        else{
+                                            Acts = DB().getActsList()
                                         }
                                     }) {
                                         Label("حذف",systemImage:"minus")
@@ -68,7 +74,11 @@ struct Acts:View {
                                     }
                                 }
                             }
-                        }.scrollContentBackground(.visible)
+                        }
+                            .refreshable(action: {
+                                Acts = DB().getActsList()
+                            })
+                            .scrollContentBackground(.visible)
                             .listStyle(.plain)
                             .onAppear{
                                 Acts = DB().getActsList()

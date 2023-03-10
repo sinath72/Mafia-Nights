@@ -12,6 +12,8 @@ struct alreadyPlayers:View {
     @State private var isPresent:Bool = false
     @State private var isPresentEdite:Bool = false
     @State private var isRefreshed:Bool = false
+    @State private var myName = ""
+    @State private var editeID = 0
     var body:some View{
         VStack{
             NavigationView{
@@ -32,17 +34,22 @@ struct alreadyPlayers:View {
                                         }
                                         .swipeActions(edge:.leading,allowsFullSwipe: true) {
                                             Button(role: .none,action:{
+                                                editeID = i
                                                 isPresentEdite.toggle()
                                             }) {
                                                 Label("ویرایش",systemImage:"square.and.pencil")
                                             }.background(Color.blue)
-                                        }.alert("تغییر نام بازیکن", isPresented: $isPresentEdite) {
-                                            let myName = $AlreadyArray[i].name
-                                            TextField("", text: myName).background(Color.gray)
-                                            Button("لغو"){}
-                                            Button("ویرایش"){
-                                                DB().UpdatePlayer(id: AlreadyArray[i].id, name: myName.wrappedValue)
+                                        }
+                                        .alert("تغییر نام بازیکن: \(AlreadyArray[editeID].name)", isPresented: $isPresentEdite) {
+                                            TextField("", text: $myName).background(Color.gray)
+                                            Button("لغو"){
                                                 AlreadyArray = DB().getPlayerList()
+                                                myName = ""
+                                            }
+                                            Button("ویرایش"){
+                                                DB().UpdatePlayer(id: AlreadyArray[editeID].id, name: $myName.wrappedValue)
+                                                AlreadyArray = DB().getPlayerList()
+                                                myName = ""
                                             }
                                         }
                                 }
