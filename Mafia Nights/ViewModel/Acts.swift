@@ -120,7 +120,7 @@ struct Acts:View {
                 .overlay{
                     HStack(alignment: .bottom){
                         if ActsSelected.count == PlayerName.count{
-                            NavigationLink(destination: GetPlayerActs()) {
+                            NavigationLink(destination: GetPlayerActs(ActsAndPlayerNotReady: (ActName:ActsSelected,PlayerName))) {
                                 Text("پخش نقش")
                                     .foregroundColor(Color.black)
                                     .frame(minWidth: CGFloat(350))

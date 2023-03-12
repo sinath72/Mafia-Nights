@@ -10,6 +10,9 @@
 		5A11255429B7F5D500C9733F /* GetPlayerActs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11255329B7F5D500C9733F /* GetPlayerActs.swift */; };
 		5AA9F69529B536D1009A84D8 /* Act_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69429B536D1009A84D8 /* Act_Model.swift */; };
 		5AA9F69A29B53F28009A84D8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9F69929B53F28009A84D8 /* DB.swift */; };
+		5AAE380A29BD3A4800947BE4 /* TileColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE380929BD3A4800947BE4 /* TileColor.swift */; };
+		5AAE380C29BD3AC700947BE4 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE380B29BD3AC700947BE4 /* PlayerState.swift */; };
+		5AAE380E29BD3BA600947BE4 /* AlreadyToGO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AAE380D29BD3BA600947BE4 /* AlreadyToGO.swift */; };
 		7B144A1E29ACDB200028596A /* Acts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1D29ACDB200028596A /* Acts.swift */; };
 		7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */; };
 		7B144A2229ACDC740028596A /* Tuterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B144A2129ACDC740028596A /* Tuterials.swift */; };
@@ -46,6 +49,9 @@
 		5A41ADC729B6753D005C0C8A /* MafiaNights.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MafiaNights.sqlite; sourceTree = "<group>"; };
 		5AA9F69429B536D1009A84D8 /* Act_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act_Model.swift; sourceTree = "<group>"; };
 		5AA9F69929B53F28009A84D8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		5AAE380929BD3A4800947BE4 /* TileColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileColor.swift; sourceTree = "<group>"; };
+		5AAE380B29BD3AC700947BE4 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		5AAE380D29BD3BA600947BE4 /* AlreadyToGO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyToGO.swift; sourceTree = "<group>"; };
 		7B144A1D29ACDB200028596A /* Acts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acts.swift; sourceTree = "<group>"; };
 		7B144A1F29ACDBDC0028596A /* AlreadyPlayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyPlayers.swift; sourceTree = "<group>"; };
 		7B144A2129ACDC740028596A /* Tuterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuterials.swift; sourceTree = "<group>"; };
@@ -173,6 +179,9 @@
 			children = (
 				7BE9F81129A60D5A007447E5 /* Player_Model.swift */,
 				5AA9F69429B536D1009A84D8 /* Act_Model.swift */,
+				5AAE380929BD3A4800947BE4 /* TileColor.swift */,
+				5AAE380B29BD3AC700947BE4 /* PlayerState.swift */,
+				5AAE380D29BD3BA600947BE4 /* AlreadyToGO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,6 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AAE380A29BD3A4800947BE4 /* TileColor.swift in Sources */,
+				5AAE380E29BD3BA600947BE4 /* AlreadyToGO.swift in Sources */,
 				7B144A2429ACDD090028596A /* Let'sPlay.swift in Sources */,
 				7B144A1E29ACDB200028596A /* Acts.swift in Sources */,
 				5AA9F69A29B53F28009A84D8 /* DB.swift in Sources */,
@@ -316,6 +327,7 @@
 				5A11255429B7F5D500C9733F /* GetPlayerActs.swift in Sources */,
 				7B144A2229ACDC740028596A /* Tuterials.swift in Sources */,
 				7B77012729A354C9007687B9 /* Mafia_NightsApp.swift in Sources */,
+				5AAE380C29BD3AC700947BE4 /* PlayerState.swift in Sources */,
 				7B144A2029ACDBDC0028596A /* AlreadyPlayers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
