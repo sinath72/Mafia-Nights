@@ -48,7 +48,6 @@ struct LetsPlay: View{
                             .onAppear{
                                 name = []
                                 name.append(contentsOf: DB().getPlayerList())
-                                Color.green
                             }
                             .toolbar(content: {
                                 

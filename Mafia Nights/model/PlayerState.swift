@@ -12,6 +12,7 @@ class PlayerState:ObservableObject{
         array = (name:[],state:[])
     }
     func setArray(name:[String]){
+        array = ([],[])
         var mystate:[Bool] = []
         for _ in 0..<name.count{
             mystate.append(false)
@@ -31,11 +32,16 @@ class PlayerState:ObservableObject{
         }
         return ""
     }
-    func setState(name:String){
+    func setTrue(name:String){
         if array.name.contains(name){
             let resualt = array.name.firstIndex(of: name)!
-            array.state[resualt].toggle()
-            print(array)
+            array.state[resualt] = true
+        }
+    }
+    func setFalse(name:String){
+        if array.name.contains(name){
+            let resualt = array.name.firstIndex(of: name)!
+            array.state[resualt] = false
         }
     }
     func setToggleAll(){

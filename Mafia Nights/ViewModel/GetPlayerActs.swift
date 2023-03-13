@@ -9,6 +9,7 @@ import SwiftUI
 struct GetPlayerActs: View {
     @State var ActsAndPlayerNotReady : (ActName:[String],PlayerNames:[String]) = (ActName:["l","k","ko","koo"],PlayerNames:["l000000000000000000000000000","p","li","koo"])
     @ObservedObject private var State:PlayerState = PlayerState()
+    @ObservedObject private var RandomActs:RandomStatement = RandomStatement()
     @State private var isPresent = false
     var randomColor = [Color.black,Color.blue,Color.green,Color.red,Color.brown,Color.cyan,Color.indigo,Color.mint,Color.yellow,Color.pink,Color.purple]
     @State var tmpName = ""
@@ -20,33 +21,39 @@ struct GetPlayerActs: View {
                 .ignoresSafeArea()
                 .overlay {
                     ScrollView{
-                        LazyVGrid(columns: [GridItem(.fixed(200)),GridItem(.flexible())]){
+                        LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]){
                             ForEach(0..<ActsAndPlayerNotReady.ActName.count,id:\.self){ i in
                                 let size = ifView(name: ActsAndPlayerNotReady.PlayerNames[i])
                                 Button(ActsAndPlayerNotReady.PlayerNames[i]){
                                     isPresent.toggle()
+                                    //State.setArray(name: ActsAndPlayerNotReady.PlayerNames)
                                     tmpName = ActsAndPlayerNotReady.ActName[i]
-                                    if State.getName(index: i) == ActsAndPlayerNotReady.PlayerNames[i]{
-                                        State.setState(name: ActsAndPlayerNotReady.PlayerNames[i])
+                                   // if State.getName(index: i) == ActsAndPlayerNotReady.PlayerNames[i]{
+                                        State.setTrue(name: ActsAndPlayerNotReady.PlayerNames[i])
                                         PN = ActsAndPlayerNotReady.PlayerNames[i]
-                                    }
+                              //      }
                                 }
                                 .frame(maxWidth: 120.0, minHeight: 100.0,maxHeight: 100.0)
-                                .padding(8.0)
+                                .padding(2.0)
                                 .foregroundColor(.white)
                                 .font(.system(size: size,weight: .bold,design: .default))
                                 .controlSize(ControlSize.regular)
                                 .dynamicTypeSize(.small)
                                 .background(mytileColor.getColor(playerName: ActsAndPlayerNotReady.PlayerNames[i]))
                                 .hiddenConditionally(isHidden:State.getState(name: ActsAndPlayerNotReady.PlayerNames[i]))
-                            }
-                        }
+                            }.padding(2.0)
+                        }.padding(8.0)
                     }.onAppear{
                         State.setArray(name: ActsAndPlayerNotReady.PlayerNames)
                     }
                 }.toolbar(content: {
                     Button(" "){
-                        
+                        State.setArray(name: ActsAndPlayerNotReady.PlayerNames)
+                        State.setFalse(name: PN)
+                        ActsAndPlayerNotReady = RandomActs.setRandom()
+                        color()
+                        tmpName = ""
+                        PN = ""
                     }.background(Image(systemName: "goforward"))
                         .padding()
                 })
@@ -57,6 +64,8 @@ struct GetPlayerActs: View {
                 .navigationBarTitleTextColor(.black)
         }.onAppear{
             color()
+            RandomActs.setData(setData: (ActName:ActsAndPlayerNotReady.ActName,PlayerName:ActsAndPlayerNotReady.PlayerNames))
+            ActsAndPlayerNotReady = RandomActs.setRandom()
         }
     }
     func color() {
@@ -64,7 +73,6 @@ struct GetPlayerActs: View {
         var setColor:[Color] = []
         for _ in 0...max{
             let color = arc4random_uniform(max)
-            print(color)
             setColor.append(randomColor[Int(color)])
         }
         mytileColor.setColor(name: ActsAndPlayerNotReady.PlayerNames, color: setColor)
