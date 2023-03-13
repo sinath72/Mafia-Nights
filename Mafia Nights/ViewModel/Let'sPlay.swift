@@ -13,7 +13,6 @@ struct LetsPlay: View{
     @State private var checkboxArray = []
     @State private var PlayerName: String = ""
     @State private var SearchText: String = ""
-    @State private var isFocused:Bool = false
     @State var name:[PlayerModel] = []
     @State var alreadyName:[String] = []
     var body : some View{
@@ -23,25 +22,7 @@ struct LetsPlay: View{
                     .ignoresSafeArea()
                     .overlay(
                         List{
-                            Color.green
-                                .ignoresSafeArea()
-                                .overlay(
-                                    TextField("Search", text: $SearchText, onEditingChanged: { isChange in
-                                        if $SearchText.wrappedValue == ""{
-                                            isFocused = false
-                                        }
-                                        else{
-                                            isFocused = true
-                                        }
-                                    }).frame(width:345,height:isFocused ? 10:45,alignment:.center)
-                                        .padding(.leading, isFocused ? 25 : 50  )
-                                        .padding(.trailing, isFocused ? 25 : 50 )
-                                        .padding(.top, isFocused ? 20 : 0  )
-                                        .padding(.bottom, isFocused ? 20 : 0 )
-                                        .background(Color.gray)
-                                        .foregroundColor(Color.black)
-                                )
-                            if $SearchText.wrappedValue == "" && isFocused == false{
+                            if $SearchText.wrappedValue == ""{
                                 ForEach(0..<name.count,id: \.self){ i in
                                     Toggle(isOn: $name[i].modify) {
                                         Text(name[i].name.description)
@@ -65,7 +46,7 @@ struct LetsPlay: View{
                                 }
                             }
                             else{
-                                let filterNames = $name.filter {$0.name.wrappedValue == $SearchText.wrappedValue}
+                                let filterNames = $name.filter {$0.name.wrappedValue.localizedLowercase == $SearchText.wrappedValue.localizedLowercase}
                                 var p = print(filterNames.first?.modify)
                                 ForEach(0..<filterNames.count,id: \.self){ i in
                                     Toggle(isOn: filterNames[i].modify) {
@@ -159,7 +140,7 @@ struct LetsPlay: View{
                         .padding()
                     }
                 )
-        }
+        }.searchable(text: $SearchText)
     }
 }
 struct Letsplay_preview: PreviewProvider{

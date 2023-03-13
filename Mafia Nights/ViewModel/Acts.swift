@@ -13,6 +13,7 @@ struct Acts:View {
     @State private var isPresentAlert = false
     @State private var ActName = ""
     @State private var ActSide = ""
+    @State private var SearchText = ""
     var body: some View{
         VStack(alignment:.trailing,spacing: 0){
             NavigationView {
@@ -20,55 +21,116 @@ struct Acts:View {
                     .ignoresSafeArea()
                     .overlay(
                         List{
-                            ForEach(0..<Acts.count,id:\.self){ i in
-                                HStack(spacing:12.0){
-                                    Toggle(isOn: $Acts[i].Modify) {
-                                        HStack{
-                                            Text(Acts[i].ActName.description)
-                                            Spacer()
-                                            Text(String(ActsSelected.filter{$0 == Acts[i].ActName}.count))
+                            if $SearchText.wrappedValue == "" {
+                                ForEach(0..<Acts.count,id:\.self){ i in
+                                    HStack(spacing:12.0){
+                                        Toggle(isOn: $Acts[i].Modify) {
+                                            HStack{
+                                                Text(Acts[i].ActName.description)
+                                                Spacer()
+                                                Text(String(ActsSelected.filter{$0 == Acts[i].ActName}.count))
+                                            }
                                         }
-                                    }
-                                    Spacer()
-                                    Button(""){
-                                        if Acts[i].Modify{
-                                            ActsSelected.append(Acts[i].ActName)
+                                        Spacer()
+                                        Button(""){
+                                            if Acts[i].Modify{
+                                                ActsSelected.append(Acts[i].ActName)
+                                            }
                                         }
-                                    }
-                                    .background(Image(systemName: "plus").dynamicTypeSize(.xxxLarge))
+                                        .background(Image(systemName: "plus").dynamicTypeSize(.xxxLarge))
                                         .foregroundColor(Color.pink)
                                         
-                                }
-                                .swipeActions (edge: .trailing, allowsFullSwipe: true){
-                                    Button(role: .destructive,action:{
-                                        if Acts[i].Modify == true{
-                                            if ActsSelected.filter({$0 == Acts[i].ActName}).count > 0{
-                                                print("pill")
-                                                let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
-                                                ActsSelected.remove(at: index!)
-                                                if ActsSelected.count == 0{
-                                                    Acts[i].Modify.toggle()
+                                    }
+                                    .swipeActions (edge: .trailing, allowsFullSwipe: true){
+                                        Button(role: .destructive,action:{
+                                            if Acts[i].Modify == true{
+                                                if ActsSelected.filter({$0 == Acts[i].ActName}).count > 0{
+                                                    print("pill")
+                                                    let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
+                                                    ActsSelected.remove(at: index!)
+                                                    if ActsSelected.count == 0{
+                                                        Acts[i].Modify.toggle()
+                                                    }
+                                                }
+                                            }
+                                            else{
+                                                Acts = DB().getActsList()
+                                            }
+                                        }) {
+                                            Label("حذف",systemImage:"minus")
+                                        }
+                                    }
+                                    .listRowBackground(Color.teal)
+                                    .onChange(of: Acts[i].Modify) { Value in
+                                        if Value {
+                                            if ActsSelected.contains(Acts[i].ActName) == false {
+                                                ActsSelected.append(Acts[i].ActName)
+                                            }
+                                        }
+                                        else {
+                                            if ActsSelected.contains(Acts[i].ActName) {
+                                                let maximum_count_index = ActsSelected.filter { $0 == Acts[i].ActName}.count - 1
+                                                for _ in 0...maximum_count_index{
+                                                    let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
+                                                    ActsSelected.remove(at: index!)
                                                 }
                                             }
                                         }
-                                        else{
-                                            Acts = DB().getActsList()
-                                        }
-                                    }) {
-                                        Label("حذف",systemImage:"minus")
                                     }
                                 }
-                                .listRowBackground(Color.teal)
-                                .onChange(of: Acts[i].Modify) { Value in
-                                    if Value {
-                                        ActsSelected.append(Acts[i].ActName)
+                            }
+                            else{
+                                let filterResualt = $Acts.filter{$0.ActName.wrappedValue.localizedLowercase == $SearchText.wrappedValue.localizedLowercase}
+                                ForEach(0..<filterResualt.count,id:\.self){ i in
+                                    HStack(spacing:12.0){
+                                        Toggle(isOn: filterResualt[i].Modify) {
+                                            HStack{
+                                                Text(filterResualt[i].ActName.wrappedValue)
+                                                Spacer()
+                                                Text(String(ActsSelected.filter{$0.description == filterResualt[i].ActName.wrappedValue}.count))
+                                            }
+                                        }
+                                        Spacer()
+                                        Button(""){
+                                            if filterResualt[i].Modify.wrappedValue{
+                                                ActsSelected.append(filterResualt[i].ActName.wrappedValue)
+                                            }
+                                        }
+                                        .background(Image(systemName: "plus").dynamicTypeSize(.xxxLarge))
+                                        .foregroundColor(Color.pink)
+                                        
                                     }
-                                    else {
-                                        if ActsSelected.contains(Acts[i].ActName) {
-                                            let maximum_count_index = ActsSelected.filter { $0 == Acts[i].ActName}.count - 1
-                                            for _ in 0...maximum_count_index{
-                                                let index = ActsSelected.firstIndex(of: $Acts[i].ActName.wrappedValue)
-                                                ActsSelected.remove(at: index!)
+                                    .swipeActions (edge: .trailing, allowsFullSwipe: true){
+                                        Button(role: .destructive,action:{
+                                            if filterResualt[i].Modify.wrappedValue == true{
+                                                if ActsSelected.filter({$0 == filterResualt[i].ActName.wrappedValue}).count > 0{
+                                                    print("pill")
+                                                    let index = ActsSelected.firstIndex(of: filterResualt[i].ActName.wrappedValue)
+                                                    ActsSelected.remove(at: index!)
+                                                    if ActsSelected.count == 0{
+                                                        filterResualt[i].Modify.wrappedValue.toggle()
+                                                    }
+                                                }
+                                            }
+                                            else{
+                                                Acts = DB().getActsList()
+                                            }
+                                        }) {
+                                            Label("حذف",systemImage:"minus")
+                                        }
+                                    }
+                                    .listRowBackground(Color.teal)
+                                    .onChange(of: filterResualt[i].Modify.wrappedValue ) { Value in
+                                        if Value {
+                                            ActsSelected.append(filterResualt[i].ActName.wrappedValue)
+                                        }
+                                        else {
+                                            if ActsSelected.contains(filterResualt[i].ActName.wrappedValue) {
+                                                let maximum_count_index = ActsSelected.filter { $0 == filterResualt[i].ActName.wrappedValue}.count - 1
+                                                for _ in 0...maximum_count_index{
+                                                    let index = ActsSelected.firstIndex(of: filterResualt[i].ActName.wrappedValue)
+                                                    ActsSelected.remove(at: index!)
+                                                }
                                             }
                                         }
                                     }
@@ -133,7 +195,7 @@ struct Acts:View {
                         }
                     }
                 }
-        }
+        }.searchable(text: $SearchText)
     }
 }
 struct Acts_preview:PreviewProvider {
